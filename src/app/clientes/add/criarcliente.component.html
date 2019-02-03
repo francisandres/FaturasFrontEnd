@@ -1,0 +1,35 @@
+<h2 mat-dialog-title >Adicionar Novo Cliente</h2>
+
+
+<mat-dialog-content>
+  <div class="addclicontainer">
+      <div class="form-group">
+          <label for="exampleInputEmail1">Primeiro Nome</label>
+          <input type="input" class="form-control" [(ngModel)]="cliente.primeiro_nome" id="primeiro_nome" aria-describedby="emailHelp" placeholder="Primeiro Nome">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1">Último Nome</label>
+          <input type="input" class="form-control" [(ngModel)]="cliente.ultimo_nome" id="ultimo_nome" aria-describedby="emailHelp" placeholder="Ultimo Nome">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1">E-mail</label>
+          <input type="email" class="form-control" [(ngModel)]="cliente.email" id="email" aria-describedby="emailHelp" placeholder="E-Mail">
+      </div>
+
+
+
+
+  </div>
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions>
+<button mat-button  (click)="salvar()">
+  <mat-icon>save</mat-icon>Guardar
+</button>
+<button mat-button  (click)="cancelar()">
+  <mat-icon>cancel</mat-icon>Cancelar
+</button>
+
+</mat-dialog-actions>

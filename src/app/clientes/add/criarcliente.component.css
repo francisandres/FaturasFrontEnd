@@ -1,0 +1,8 @@
+.addclicontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.addclicontainer > * {
+  width: 100%;
+}

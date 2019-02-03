@@ -1,0 +1,107 @@
+<form class="form-horizontal" action='' method="POST">
+  <fieldset>
+    <div class="col-lg-12 form-group margin50">
+      <label class="col-lg-2"  for="Name">Nome</label>
+      <div class="col-lg-4">
+        <input type="text" id="name" name="Name" placeholder="" class="form-control" [(ngModel)] = "produto.nome">
+      </div>
+    </div>
+
+    <div class=" col-lg-12 form-group">
+      <label class="col-lg-2" for="ProductType">Categoria</label>
+      <div class="col-lg-4">
+        <select id="productType" name="ProductType" class="form-control product-type">
+            <option value="0">-Escolher-</option>
+        </select>
+      </div>
+    </div>
+     <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="Manufacturer">Fabricante</label>
+      <div class="col-lg-4">
+        <select id="manufacturer" name="Manufacturer" class="form-control manufacturer">
+            <option value="0">-Escolher-</option>
+        </select>
+
+      </div>
+    </div>
+
+    <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="Distributor">Fornecedor</label>
+      <div class="col-lg-4">
+        <select id="distributor" name="Distributor" class="form-control distributor">
+            <option value="0">-Escolher-</option>
+        </select>
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="col-lg-12 form-group">
+      <label class="col-lg-2"  for="Published">Disponível?</label>
+      <div class="col-lg-4">
+        <input type="radio"  name="Published" class="input-xlarge"><span>Não</span>
+         <input type="radio"  name="Published" checked class="input-xlarge"><span>Sim</span>
+      </div>
+    </div>
+
+
+
+     <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="TaxClass"> Impostos</label>
+      <div class="col-lg-4">
+        <select id="taxClass" name="TaxClass" class="form-control tax-class">
+            <option value="0">-Escolher-</option>
+        </select>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h3>Informação relevante</h3>
+
+     <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="Price">Preço de Compra</label>
+      <div class="col-lg-4">
+        <input type="text" id="price" name="Price" placeholder="" class="form-control price">
+      </div>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="SalePrice">Preço de Venda</label>
+      <div class="col-lg-4">
+        <input type="text" id="saleprice" name="SalePrice" placeholder="" class="form-control" [(ngModel)]="produto.preco">
+      </div>
+    </div>
+
+
+
+    <div class="col-lg-12 form-group">
+      <label class="col-lg-2" for="CurrentInventory">Inventário Actual (Stock)</label>
+      <div class="col-lg-4">
+        <input type="text" id="currentInventory" name="CurrentInventory" placeholder="" class="form-control" [(ngModel)]="produto.stock">
+      </div>
+    </div>
+
+
+
+  </fieldset>
+</form>
+
+
+<mat-dialog-actions>
+<button mat-button  (click)="salvar()" style="color: blue">
+  <mat-icon>save</mat-icon>Guardar
+</button>
+<button mat-button  (click)="cancelar()" style="color: red">
+  <mat-icon>cancel</mat-icon>Cancelar
+</button>
+
+</mat-dialog-actions>

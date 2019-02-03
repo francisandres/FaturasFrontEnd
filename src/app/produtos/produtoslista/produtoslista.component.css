@@ -1,0 +1,7 @@
+table {
+  width: 100%;
+}
+
+#toast-container > div {
+  opacity:1;
+}

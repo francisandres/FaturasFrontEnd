@@ -1,0 +1,97 @@
+<mat-toolbar> <div class="container">  <button mat-button>Listar</button><button mat-button>Nova</button><button mat-button>Pagar</button><button mat-button>Imprimir</button></div></mat-toolbar>
+<div class="container"><form [formGroup]="orcamentoForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Nova Fatura</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-select placeholder="Seleccione o Cliente" formControlName="clienteId">
+              <mat-option *ngFor="let cliente of clientes" [value]="cliente.clienteId">
+                {{cliente.primeiro_nome}} {{cliente.ultimo_nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div formArrayName="linha" *ngFor="let lin of linha.controls; let i=index">
+
+      <div class="row" [formGroupName]="i">
+        <div class="col-md-4">
+            <mat-select placeholder="Seleccione o Produto" (selectionChange) = "onChangeProduct($event, i)" formControlName="produtoId">
+                <mat-option *ngFor="let produto of produtos" [value]="produto.produtoId">
+                  {{produto.nome}}
+                </mat-option>
+              </mat-select>
+        </div>
+        <div #{{i}} class="col-md-1">
+          <mat-form-field class="full-width">
+            <input type="number" min="1" max="15" matInput placeholder="Qtdade" (change)="onChangQtdade($event, i)" formControlName="quantidade">
+
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field class="full-width">
+              <span matPrefix>AKZ &nbsp;</span>
+            <input matInput placeholder="Preço" formControlName="precovenda">
+
+          </mat-form-field>
+        </div>
+
+          <div class="col-md-1">
+            <mat-form-field class="full-width">
+
+              <input matInput placeholder="Desconto" formControlName="desconto">
+
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-1">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Imposto" formControlName="imposto">
+
+          </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+
+
+        <input matInput  type="text" readonly style="padding: 11px 0px 11px 0px; font-size: 19px;" formControlName="totallinha">
+
+
+
+
+
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+      </div>
+<br>
+<div class="container">
+<button class="mat-button" type="button" (click)="addLinha()">+ Nova Linha</button>
+
+
+
+</div>
+
+
+    </mat-card-content>
+   <div class="container">
+      <strong> TOTAL:<input matInput  type="text" formControlName="_lastUsed" readonly style="padding: 11px 0px 11px 0px; font-size: 19px;" formControlName="totalfatura">
+      </strong>
+
+    <div class="col-md-4">
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+    </mat-card-actions>
+  </div>
+
+
+    </div>
+
+  </mat-card>
+
+</form>
+</div>
