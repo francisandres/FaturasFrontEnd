@@ -23,12 +23,12 @@ export class ClienteService {
 
 
   obterClientes(): Observable<Clientes[]> {
-    console.log('Atacando o servidor...');
+
     return this.http.get<Clientes[]>(this.Url);
   }
 
   adicionarCliente(cliente: Clientes): Observable<Clientes> {
-    console.log('Atacando Post...');
+
     return this.http.post<Clientes>(this.Url, cliente, httpOptions);
   }
 

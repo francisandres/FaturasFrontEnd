@@ -11,7 +11,12 @@ import { ListardetalhesclienteComponent } from './clientes/detalhes/listardetalh
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CriarprodutoComponent } from './produtos/criarproduto/criarproduto.component';
 import { PagamentosComponent } from './pagamentos/pagamentos.component';
-import { FaturaComponent } from './faturas/fatura/fatura.component';
+
+import { ClienteResolverService } from './servicos/cliente-resolver.service';
+import { FaturasResolverService } from './servicos/faturas-resolver/faturas-resolver.service';
+import { FaturadetalheComponent } from './faturas/faturadetalhe.component';
+import { VendasComponent } from './vendas/vendas.component';
+import { FinancasComponent } from './financas/financas.component';
 
 
 const routes: Routes = [{
@@ -24,16 +29,25 @@ const routes: Routes = [{
   component: PainelComponent
 },
 {
-  path: 'faturaprint',
-  component: FaturaComponent
+  path: 'vendas',
+  component: VendasComponent, children: [
+    { path: '', redirectTo: 'clientes', pathMatch: 'full' },
+    { path: 'clientes', component: ClienteslistaComponent },
+    {path: 'produtos', component: ProdutoslistaComponent},
+    {path: 'faturas', component: CriarfaturaComponent }
+  ]
 },
 {
-  path: 'clientes',
-  component: ClienteslistaComponent
+  path: 'financas',
+  component: FinancasComponent
+},
+{
+  path: 'faturadetalhe',
+  component: FaturadetalheComponent
 },
 {
   path: 'pagamentos',
-  component: PagamentosComponent
+  component: PagamentosComponent, resolve: {data: ClienteResolverService}
 },
 
 {

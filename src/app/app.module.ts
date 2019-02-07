@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { LayoutModule } from '@angular/cdk/layout';
 // tslint:disable-next-line:max-line-length
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatDialogModule, MatCardModule, MatSelectModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatDialogModule, MatCardModule, MatSelectModule, MatInputModule, MatMenuModule } from '@angular/material';
 import { PainelComponent } from './painel/painel.component';
 
 import { ClienteService } from './servicos/cliente.service';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { ClienteslistaComponent } from './clientes/clienteslista/clienteslista.component';
 import { CriarclienteComponent } from './clientes/add/criarcliente.component';
@@ -27,7 +28,12 @@ import { CriarprodutoComponent } from './produtos/criarproduto/criarproduto.comp
 import { ToastrModule } from 'ngx-toastr';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { PagamentosComponent } from './pagamentos/pagamentos.component';
-import { FaturaComponent } from './faturas/fatura/fatura.component';
+
+import { ClienteResolverService } from './servicos/cliente-resolver.service';
+import { ProdutosService } from './servicos/produtos.service';
+import { FaturadetalheComponent } from './faturas/faturadetalhe.component';
+import { VendasComponent } from './vendas/vendas.component';
+import { FinancasComponent } from './financas/financas.component';
 
 
 
@@ -47,7 +53,9 @@ import { FaturaComponent } from './faturas/fatura/fatura.component';
     CriarprodutoComponent,
     ProdutosComponent,
     PagamentosComponent,
-    FaturaComponent,
+    FaturadetalheComponent,
+    VendasComponent,
+    FinancasComponent
 
   ],
   entryComponents: [
@@ -75,11 +83,12 @@ import { FaturaComponent } from './faturas/fatura/fatura.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatMenuModule
 
 
   ],
-  providers: [ClienteService],
+  providers: [ClienteService, ClienteResolverService, ProdutosService],
   bootstrap: [NavegacaoComponent]
 })
 export class AppModule { }

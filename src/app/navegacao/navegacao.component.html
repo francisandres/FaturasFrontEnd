@@ -1,10 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
         <mat-toolbar  style="background: turquoise; color: white">Menu</mat-toolbar>
-        <mat-nav-list>
+        <mat-nav-list class="container">
             <a mat-list-item [routerLink]="['/']"><mat-icon style="color:blue">dashboard </mat-icon>Painel </a>
-            <a mat-list-item [routerLink]="['/clientes']"><mat-icon style="color: blue">face </mat-icon>Clientes</a>
-            <a mat-list-item [routerLink]="['/produtos']"><mat-icon style="color:indigo">store </mat-icon>Produtos</a>
+            <a mat-list-item [routerLink]="['/financas']"><mat-icon style="color: blue">account_balance </mat-icon>Finanças</a>
+            <a mat-list-item [routerLink]="['/vendas']"><mat-icon style="color:blue">store </mat-icon>Vendas</a>
+
+
+
             <br>
             <br>
             <a mat-list-item href="#"><mat-icon style="color:indigo">create </mat-icon>Orçamentos</a>
@@ -18,7 +21,10 @@
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-            <span>HR TECH</span>
+            <span>HR TECH</span>  <button mat-mini-fab style="position: absolute; right: 10px; color: rgb(255, 255, 255); background: turquoise"
+            >
+                <mat-icon class="mat-18">add</mat-icon>
+            </button>
         </mat-toolbar>
         <!-- Add Content Here -->
         <router-outlet></router-outlet>

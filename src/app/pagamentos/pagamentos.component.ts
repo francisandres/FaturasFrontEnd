@@ -3,6 +3,9 @@ import { Clientes } from '../clientes/Clientes';
 import { Faturas } from '../faturas/Faturas';
 import { ClienteService } from '../servicos/cliente.service';
 import { FaturasService } from '../servicos/faturas.service';
+import { ClienteResolverService } from '../servicos/cliente-resolver.service';
+import { ActivatedRoute } from '@angular/router';
+import { Pagamentos } from './pagamentos';
 
 @Component({
   selector: 'app-pagamentos',
@@ -13,17 +16,23 @@ export class PagamentosComponent implements OnInit {
 
   clientes: Clientes[];
   faturas: Faturas[];
-  clienteselecionado = new Clientes();
-  pagamento: any;
 
-  constructor(private cliser: ClienteService, private fatser: FaturasService) { }
+
+
+
+  constructor( private fatser: FaturasService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.fatser.obterFaturas().subscribe(c => this.faturas = c);
-    this.cliser.obterClientes().subscribe(c => this.clientes = c);
+    const resolvedData: Clientes[] = this.route.snapshot.data['data'];
+    this.clientes = resolvedData;
+
+    console.log(this.faturas);
   }
 
+
   onSelect(clienteid) {
+    console.log(this.faturas);
 
    this.faturas = this.faturas.filter(c => c.clienteId === clienteid);
   }

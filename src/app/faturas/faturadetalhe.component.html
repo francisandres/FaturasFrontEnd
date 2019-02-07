@@ -1,0 +1,115 @@
+<div class="container" style="margin-top: 10px">
+  <div class="card">
+<div class="card-header">
+Fatura
+<strong>01/01/01/2018</strong>
+  <span class="float-right"> <strong>Estado:</strong> Por emitir</span>
+
+</div>
+<div class="card-body">
+<div class="row mb-4">
+<div class="col-sm-6">
+
+<h6 class="mb-3">De:</h6>
+<div>
+<strong>Gesprin Estudos e Projectos Lda</strong>
+</div>
+<div>A Simões</div>
+<div>Urbanização Nova Vida Rua 181 Casa 6024</div>
+<div>Email: info@gesprin.co.ao</div>
+<div>Telefone: +244 933 55 55 55</div>
+</div>
+
+<div class="col-sm-6">
+<h6 class="mb-3">Para:</h6>
+<div>
+<strong></strong>
+</div>
+<div>AC: </div>
+<div>End: </div>
+<div>Email: </div>
+<div>Telefone: </div>
+</div>
+
+
+
+</div>
+
+<div class="table-responsive-sm">
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th class="center">#</th>
+<th>Item</th>
+<th>Descrição</th>
+
+<th class="right">Preço Unitário</th>
+  <th class="center">Qtde</th>
+<th class="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor=" let item of fatura.linha">
+<td class="center">{{item.produtoid}}</td>
+<td class="left strong">Teste</td>
+<td class="left">Extended License</td>
+
+<td class="right">{{item.precovenda | currency: 'AOA'}}</td>
+  <td class="center">{{item.quantidade}}</td>
+<td class="right">{{item.totallinha |currency: 'AOA'}}</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+<div class="row">
+<div class="col-lg-4 col-sm-5">
+
+</div>
+
+<div class="col-lg-4 col-sm-5 ml-auto">
+<table class="table table-clear">
+<tbody>
+<tr>
+<td class="left">
+<strong>Subtotal</strong>
+</td>
+<td class="right">{{fatura.totalfatura - ((fatura.totalfatura/114)*14)| currency: 'AOA' }}</td>
+</tr>
+<tr>
+<td class="left">
+<strong>Desconto </strong>
+</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td class="left">
+ <strong>IVA (14%)</strong>
+</td>
+<td class="right">{{((fatura.totalfatura/114)*14)| currency: 'AOA'}}</td>
+</tr>
+<tr>
+<td class="left">
+<strong>Total</strong>
+</td>
+<td class="right">
+<strong>{{fatura.totalfatura | currency: 'AOA'}}</strong>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container" style="margin-top: 10px" > <button class="btn btn-primary" style ="margin-right: 5px" type="submit">Validar</button> <button class="btn btn-primary" style ="margin-right: 5px" type="submit">Editar</button> <button class="btn btn-primary" type="submit">Cancelar</button></div>
+
+
+
+
+

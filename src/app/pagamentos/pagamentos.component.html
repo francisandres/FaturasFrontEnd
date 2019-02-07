@@ -1,15 +1,21 @@
 <div class="container"><label>Cliente:</label>
-<select class="form-control" [(ngModel)]="pagamento.clienteId" (change)="onSelect($event.target.value)">
+<select class="form-control"  (change)="onSelect($event.target.value)">
 <option value="0">--Escolher Cliente--</option>
-<option *ngFor="let cliente of clientes" value={{cliente.clienteId}}>{{cliente.primeiro_nome}}</option>
+<option *ngFor="let cliente of clientes" value={{cliente.clienteId}}>{{cliente.ultimo_nome}}</option>
 </select>
 <br /><br />
 <div>
     <label>Faturas:</label>
-    <select class="form-control"[(ngModel)] = "pagamento.faturaId">
-<option *ngIf='clienteselecionado.clienteId == null' value="0">--Escolher Fatura--</option>
-<option *ngFor="let fatura of faturas " value={{fatura.faturaId}}>{{fatura.faturaId}}</option>
+    <select class="form-control">
+ <!-- <option *ngIf='clienteselecionado.clienteId == null' value="0">--Escolher Fatura--</option> -->
+<option *ngFor="let fatura of faturas " value={{fatura.faturaId}}>{{fatura.numerodefatura}}</option>
 </select>
 </div>
 
 </div>
+
+
+
+
+
+

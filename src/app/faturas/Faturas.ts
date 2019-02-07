@@ -1,16 +1,24 @@
-export class Linha {
-  precovenda: number;
-  quantidade: number;
-  produtoid: string;
-}
 
 
-export class Faturas {
+
+export interface Faturas {
   faturaId: string;
   clienteId: string;
-  totalFatura: number;
-  valorPago: number;
-  linha: {[key: string]: Linha};
+  nome: string;
+  totalfatura: number;
+  valoremdivida: number;
+  numerodefatura: number;
+  linha: Linha[];
+}
+
+export interface Linha {
+  produtoid: string;
+  quantidade: number;
+  precovenda: number;
+  desconto: number;
+  imposto: null;
+  totallinha: number;
+
 }
 
 

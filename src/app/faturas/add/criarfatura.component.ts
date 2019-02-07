@@ -47,11 +47,8 @@ export class CriarfaturaComponent implements OnInit {
     const p = {...this.orcamentoForm.value};
 
     console.log('Submit', p as Faturas);
-    this.faturaservico.adicionarFatura(p as Faturas).subscribe(
-      (data: Faturas) => {this.router.navigateByUrl('/painel');
-
-    }, (err: any) => console.log(err)
-    );
+    this.faturaservico.definirFaturaTemp(p);
+    this.router.navigate(['/faturadetalhe']);
 
   }
 
