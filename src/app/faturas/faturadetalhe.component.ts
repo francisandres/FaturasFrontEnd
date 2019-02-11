@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FaturasService } from '../servicos/faturas.service';
 import { Faturas, Linha } from './Faturas';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-faturadetalhe',
@@ -10,8 +11,9 @@ import { Faturas, Linha } from './Faturas';
 export class FaturadetalheComponent implements OnInit {
    fatura: Faturas;
    x: Linha[];
+   dataatual = new Date();
 
-  constructor(private serv: FaturasService ) { }
+  constructor(private serv: FaturasService, private router: Router ) { }
 
   ngOnInit() {
     this.serv.obterFaturaTemp().subscribe(
@@ -22,6 +24,15 @@ export class FaturadetalheComponent implements OnInit {
   this.x = Object.assign({}, this.fatura.linha as Linha[]);
     console.log(this.x);
 
+  }
+
+  onValidar() {
+    console.log(this.fatura);
+    this.serv.adicionarFatura(this.fatura).subscribe(
+      (data: Faturas) => {this.router.navigateByUrl('/vendas/produtos');
+
+    }, (err: any) => console.log(err)
+    );
   }
 
 }

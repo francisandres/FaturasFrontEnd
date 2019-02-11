@@ -5,15 +5,19 @@
             <a mat-list-item [routerLink]="['/']"><mat-icon style="color:blue">dashboard </mat-icon>Painel </a>
             <a mat-list-item [routerLink]="['/financas']"><mat-icon style="color: blue">account_balance </mat-icon>Finanças</a>
             <a mat-list-item [routerLink]="['/vendas']"><mat-icon style="color:blue">store </mat-icon>Vendas</a>
+            <a mat-list-item href=""> <mat-icon style="color:blue">local_atm </mat-icon> Gastos</a>
+            <a mat-list-item href="#"><mat-icon style="color:blue">face </mat-icon>Funcionários</a>
+            <a mat-list-item [routerLink]="['/faturas']"><mat-icon style="color:blue">receipt</mat-icon>Relatórios</a>
 
 
 
             <br>
-            <br>
-            <a mat-list-item href="#"><mat-icon style="color:indigo">create </mat-icon>Orçamentos</a>
-            <a mat-list-item [routerLink]="['/faturas']"><mat-icon style="color:indigo">dehaze</mat-icon>Faturas</a>
-            <a mat-list-item [routerLink]="['/pagamentos']"><mat-icon style="color:indigo">credit_card</mat-icon>Pagamentos</a>
-            <a mat-list-item href=""> <mat-icon style="color:indigo">local_atm </mat-icon> Gastos</a> <br> <br><mat-divider></mat-divider>
+
+
+
+            <a mat-list-item [routerLink]="['/pagamentos']"><mat-icon style="color:purple">credit_card</mat-icon>Impostos</a>
+             <br> <br><mat-divider></mat-divider>
+             <a mat-list-item [routerLink]="['/pagamentos']"><mat-icon style="color:purple">settings</mat-icon>Configurações</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -28,5 +32,6 @@
         </mat-toolbar>
         <!-- Add Content Here -->
         <router-outlet></router-outlet>
+        
     </mat-sidenav-content>
 

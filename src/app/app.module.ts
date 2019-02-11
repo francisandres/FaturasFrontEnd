@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChartsModule } from 'ng2-charts';
 
 
 import { ClienteslistaComponent } from './clientes/clienteslista/clienteslista.component';
@@ -34,6 +35,9 @@ import { ProdutosService } from './servicos/produtos.service';
 import { FaturadetalheComponent } from './faturas/faturadetalhe.component';
 import { VendasComponent } from './vendas/vendas.component';
 import { FinancasComponent } from './financas/financas.component';
+import { BarrasComponent } from './graficos/barras.component';
+import { DespesasComponent } from './graficos/donut/despesas.component';
+import { ReceitasComponent } from './graficos/donut/receitas.component';
 
 
 
@@ -55,7 +59,10 @@ import { FinancasComponent } from './financas/financas.component';
     PagamentosComponent,
     FaturadetalheComponent,
     VendasComponent,
-    FinancasComponent
+    FinancasComponent,
+    BarrasComponent,
+    DespesasComponent,
+    ReceitasComponent
 
   ],
   entryComponents: [
@@ -84,7 +91,8 @@ import { FinancasComponent } from './financas/financas.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     ToastrModule.forRoot(),
-    MatMenuModule
+    MatMenuModule,
+    ChartsModule
 
 
   ],

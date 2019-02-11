@@ -1,8 +1,8 @@
 <div class="container" style="margin-top: 10px">
   <div class="card">
 <div class="card-header">
-Fatura
-<strong>01/01/01/2018</strong>
+Data
+<strong>{{dataatual | date:'dd-MM-yyyy'}}</strong>
   <span class="float-right"> <strong>Estado:</strong> Por emitir</span>
 
 </div>
@@ -23,7 +23,7 @@ Fatura
 <div class="col-sm-6">
 <h6 class="mb-3">Para:</h6>
 <div>
-<strong></strong>
+<strong>{{fatura.nome}}</strong>
 </div>
 <div>AC: </div>
 <div>End: </div>
@@ -52,8 +52,8 @@ Fatura
 <tbody>
 <tr *ngFor=" let item of fatura.linha">
 <td class="center">{{item.produtoid}}</td>
-<td class="left strong">Teste</td>
-<td class="left">Extended License</td>
+<td class="left strong">{{item.nome}}</td>
+<td class="left">{{item.descricao}}</td>
 
 <td class="right">{{item.precovenda | currency: 'AOA'}}</td>
   <td class="center">{{item.quantidade}}</td>
@@ -107,7 +107,7 @@ Fatura
 </div>
 </div>
 </div>
-<div class="container" style="margin-top: 10px" > <button class="btn btn-primary" style ="margin-right: 5px" type="submit">Validar</button> <button class="btn btn-primary" style ="margin-right: 5px" type="submit">Editar</button> <button class="btn btn-primary" type="submit">Cancelar</button></div>
+<div class="container" style="margin-top: 10px" > <button class="btn btn-primary"(click)="onValidar()"  style ="margin-right: 5px" type="submit">Validar</button> <button class="btn btn-primary" style ="margin-right: 5px" type="submit">Editar</button> <button class="btn btn-primary" type="submit">Cancelar</button></div>
 
 
 

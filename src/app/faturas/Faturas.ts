@@ -13,6 +13,8 @@ export interface Faturas {
 
 export interface Linha {
   produtoid: string;
+  descricao: string;
+  nome: string;
   quantidade: number;
   precovenda: number;
   desconto: number;

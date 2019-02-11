@@ -19,10 +19,12 @@ export class CriarfaturaComponent implements OnInit {
   clientes: Clientes[];
   produtos: Produtos[];
   currentProduto: string;
+  clienteselecionado: Clientes;
 
   orcamentoForm = this.fb.group({
     faturaid: null,
     clienteId: null,
+    nome: null,
     totalfatura: 0,
     linha: this.fb.array( [this.contruirLinha()]),
 
@@ -44,9 +46,16 @@ export class CriarfaturaComponent implements OnInit {
 
 
   onSubmit() {
+    this.orcamentoForm.patchValue(
+   {
+     // tslint:disable-next-line:quotemark
+     nome: this.clienteselecionado.primeiro_nome + " " + this.clienteselecionado.ultimo_nome
+   }
+    );
     const p = {...this.orcamentoForm.value};
 
     console.log('Submit', p as Faturas);
+
     this.faturaservico.definirFaturaTemp(p);
     this.router.navigate(['/faturadetalhe']);
 
@@ -74,8 +83,11 @@ onChangeProduct($event, i) {
   linhaFormControl.patchValue({
     id: product.produtoId,
     totallinha: total,
+    nome: product.nome,
+    descricao: product.descricao,
     ProdutoId: product.produtoId,
-    precovenda: product.preco
+    precovenda: product.preco,
+
   });
 
   this.setAllTotal();
@@ -96,16 +108,24 @@ onChangQtdade($event, i) {
   this.setAllTotal();
 }
 
+onChangeNome($event) {
+  this.clienteselecionado = this.clientes.find( c => c.clienteId === $event.value);
+  console.log(this.clienteselecionado);
+
+}
+
 
 contruirLinha(): FormGroup {
   return this.fb.group({
     id: [null],
+    nome: null,
     produtoId: [null, Validators.required],
     quantidade: [1, Validators.required],
     precovenda: ['', [
       RxwebValidators.numeric({isFormat: true})]],
     desconto: null,
     imposto: null,
+    descricao: null,
     totallinha: 0
     });
 }
