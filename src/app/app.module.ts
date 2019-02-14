@@ -39,6 +39,11 @@ import { BarrasComponent } from './graficos/barras.component';
 import { DespesasComponent } from './graficos/donut/despesas.component';
 import { ReceitasComponent } from './graficos/donut/receitas.component';
 
+import { ListarFaturasComponent } from './faturas/listagem/listar-faturas.component';
+import { FaturaComponent } from './faturas/detalhes/fatura.component';
+import { GastosMenuComponent } from './gastos/gastos-menu.component';
+
+
 
 
 
@@ -62,7 +67,11 @@ import { ReceitasComponent } from './graficos/donut/receitas.component';
     FinancasComponent,
     BarrasComponent,
     DespesasComponent,
-    ReceitasComponent
+    ReceitasComponent,
+    ListarFaturasComponent,
+    FaturaComponent,
+    GastosMenuComponent,
+
 
   ],
   entryComponents: [

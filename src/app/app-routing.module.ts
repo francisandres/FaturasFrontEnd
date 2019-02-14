@@ -17,6 +17,9 @@ import { FaturasResolverService } from './servicos/faturas-resolver/faturas-reso
 import { FaturadetalheComponent } from './faturas/faturadetalhe.component';
 import { VendasComponent } from './vendas/vendas.component';
 import { FinancasComponent } from './financas/financas.component';
+import { ListarFaturasComponent } from './faturas/listagem/listar-faturas.component';
+import { FaturaComponent } from './faturas/detalhes/fatura.component';
+import { GastosMenuComponent } from './gastos/gastos-menu.component';
 
 
 const routes: Routes = [{
@@ -31,10 +34,18 @@ const routes: Routes = [{
 {
   path: 'vendas',
   component: VendasComponent, children: [
-    { path: '', redirectTo: 'clientes', pathMatch: 'full' },
-    { path: 'clientes', component: ClienteslistaComponent },
+    {path: '', redirectTo: 'clientes', pathMatch: 'full' },
+    {path: 'clientes', component: ClienteslistaComponent },
+    {path: 'detalhescliente/:id', component: ListardetalhesclienteComponent },
+
     {path: 'produtos', component: ProdutoslistaComponent},
-    {path: 'faturas', component: CriarfaturaComponent }
+    {path: 'criarproduto', component: CriarprodutoComponent},
+
+    {path: 'criarfatura', component: CriarfaturaComponent },
+    {path: 'faturadetalhe', component: FaturadetalheComponent},
+    {path: 'detalhesfatura/:id', component: FaturaComponent},
+    {path: 'faturas', component: ListarFaturasComponent},
+    {path: 'receberpagamento', component: PagamentosComponent }
   ]
 },
 {
@@ -42,28 +53,12 @@ const routes: Routes = [{
   component: FinancasComponent
 },
 {
-  path: 'faturadetalhe',
-  component: FaturadetalheComponent
-},
-{
-  path: 'pagamentos',
-  component: PagamentosComponent, resolve: {data: ClienteResolverService}
-},
+  path: 'gastos',
+  component: GastosMenuComponent
+}
 
-{
-  path: 'produtos',
-  component: ProdutosComponent,
-  children: [
-    { path: '', redirectTo: 'listar', pathMatch: 'full' },
-    { path: 'listar', component: ProdutoslistaComponent },
-    {path: 'criar', component: CriarprodutoComponent}
-  ]
-},
-{
-  path: 'faturas',
-  component: CriarfaturaComponent
-},
-{ path: 'detalhescliente/:id', component: ListardetalhesclienteComponent }
+
+
 ];
 
 @NgModule({

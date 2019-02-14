@@ -3,7 +3,7 @@
 <div class="card-header">
 Data
 <strong>{{dataatual | date:'dd-MM-yyyy'}}</strong>
-  <span class="float-right"> <strong>Estado:</strong> {{fatura.estadodafatura}}</span>
+  <span class="float-right"> <strong>Estado:</strong> {{fatura.estadodaFatura}}</span>
 
 </div>
 <div class="card-body">
@@ -49,7 +49,7 @@ Data
 <th class="right">Total</th>
 </tr>
 </thead>
-<tbody>
+<!-- <tbody>
 <tr *ngFor=" let item of fatura.linha">
 <td class="center">{{item.produtoid}}</td>
 <td class="left strong">{{item.nome}}</td>
@@ -60,7 +60,7 @@ Data
 <td class="right">{{item.totallinha |currency: 'AOA'}}</td>
 </tr>
 
-</tbody>
+</tbody> -->
 </table>
 </div>
 <div class="row">
@@ -75,7 +75,7 @@ Data
 <td class="left">
 <strong>Subtotal</strong>
 </td>
-<td class="right">{{fatura.totalfatura - ((fatura.totalfatura/114)*14)| currency: 'AOA' }}</td>
+<td class="right">{{fatura.totalFatura - ((fatura.totalFatura/114)*14)| currency: 'AOA' }}</td>
 </tr>
 <tr>
 <td class="left">
@@ -87,16 +87,36 @@ Data
 <td class="left">
  <strong>IVA (14%)</strong>
 </td>
-<td class="right">{{((fatura.totalfatura/114)*14)| currency: 'AOA'}}</td>
+<td class="right">{{((fatura.totalFatura/114)*14)| currency: 'AOA'}}</td>
 </tr>
+
 <tr>
 <td class="left">
 <strong>Total</strong>
 </td>
 <td class="right">
-<strong>{{fatura.totalfatura | currency: 'AOA'}}</strong>
+<strong>{{fatura.totalFatura | currency: 'AOA'}}</strong>
 </td>
 </tr>
+<tr>
+    <td class="left">
+    <strong>Valor Pago:</strong>
+    </td>
+    <td class="right">
+    <strong>{{fatura.valorPago | currency: 'AOA'}}</strong>
+    </td>
+    </tr>
+    <tr>
+        <td class="left">
+        <strong>Valor em dívida:</strong>
+        </td>
+        <td class="right">
+          <div *ngIf="(fatura.totalFatura - fatura.valorPago) > 0">
+        <strong style="color: red">{{fatura.totalFatura - fatura.valorPago | currency: 'AOA'}}</strong></div>
+        </td>
+        </tr>
+
+
 </tbody>
 </table>
 
@@ -107,9 +127,6 @@ Data
 </div>
 </div>
 </div>
-<div class="container d-flex justify-content-end" style="margin-top: 10px; width: 80%" > <button class="btn btn-primary"(click)="onValidar()"  style ="margin-right: 5px" type="submit">Validar</button> <button class="btn btn-primary" style ="margin-right: 5px" type="submit">Editar</button> <button class="btn btn-primary" type="submit">Cancelar</button></div>
-
-
-
+<div class="container d-flex justify-content-end" style="margin-top: 10px; width: 80%" > <button class="btn btn-primary"  style ="margin-right: 5px" type="submit">Imprimir</button> <button class="btn btn-primary" style ="margin-right: 5px" type="submit" (click)="onPagamento()">Registar Pagamento</button> <button class="btn btn-primary" type="submit">Nota de crédito</button></div>
 
 

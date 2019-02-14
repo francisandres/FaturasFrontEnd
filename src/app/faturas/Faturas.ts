@@ -1,17 +1,18 @@
 
 
 
-export interface Faturas {
+export class Faturas {
   faturaId: string;
   clienteId: string;
   nome: string;
   totalfatura: number;
   valoremdivida: number;
   numerodefatura: number;
+  estadodafatura: string;
   linha: Linha[];
 }
 
-export interface Linha {
+export class Linha {
   produtoid: string;
   descricao: string;
   nome: string;

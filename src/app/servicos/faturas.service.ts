@@ -40,5 +40,10 @@ export class FaturasService {
     return of(this._faturatemp);
   }
 
+  obterFaturaporid(id: string): Observable<Faturas> {
+    const url1 = `${this.Url}/${id}`;
+     return this.http.get<Faturas>(url1);
+  }
+
 
 }

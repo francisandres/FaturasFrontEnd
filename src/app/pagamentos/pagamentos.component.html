@@ -1,19 +1,104 @@
-<div class="container"><label>Cliente:</label>
-<select class="form-control"  (change)="onSelect($event.target.value)">
-<option value="0">--Escolher Cliente--</option>
-<option *ngFor="let cliente of clientes" value={{cliente.clienteId}}>{{cliente.ultimo_nome}}</option>
-</select>
-<br /><br />
-<div>
-    <label>Faturas:</label>
-    <select class="form-control">
- <!-- <option *ngIf='clienteselecionado.clienteId == null' value="0">--Escolher Fatura--</option> -->
-<option *ngFor="let fatura of faturas " value={{fatura.faturaId}}>{{fatura.numerodefatura}}</option>
-</select>
-</div>
+<div class="margem largura container">
+<div class="card">
+    <div class="card-header" style="text-align: center">
+     <strong><h3>Detalhes do pagamento</h3></strong>
+    </div>
+<div class="container">
+  <form class="margem">
+  <div class="row margem">
+    <div class="col d-flex justify-content-end">
+      <span>Número da Fatura:</span>
+    </div>
+    <div class="col">
+     <span>{{fatura.faturaId}}</span>
+    </div>
+  </div>
+  <div class="row margem">
+    <div class="col d-flex justify-content-end">
+      <span>Cliente:</span>
+    </div>
+    <div class="col">
+      <span>{{fatura.nome}}</span>
+    </div>
+  </div>
+  <div class="row margem">
+    <div class="col d-flex justify-content-end">
+      <span>Data:</span>
+    </div>
+    <div class="col">
+     {{dataatual | date:'dd-MM-yyyy'}}
+    </div>
+  </div>
+  <div class="row margem">
+    <div class="col d-flex justify-content-end">
+      <span>Banco de destino:</span>
+    </div>
+    <div class="col">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Caixa</option>
+        <option>BFA</option>
+        <option>BIC</option>
 
-</div>
+      </select>
+    </div>
+  </div>
 
+  <div class="row margem">
+    <div class="col d-flex justify-content-end">
+      <span>Tipo de Pagamento:</span>
+    </div>
+    <div class="col">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Dinheiro</option>
+        <option>Multicaixa</option>
+        <option>Cheque</option>
+        <option>Transferência</option>
+        <option>Depósito</option>
+      </select>
+    </div>
+  </div>
+  <div class="row margem">
+      <div class="col d-flex justify-content-end">
+        <span>Descrição do Pagamento:</span>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição de pagamento">
+      </div>
+    </div>
+    <div class="row margem">
+      <div class="col d-flex justify-content-end">
+        <span>Valor em dívida:</span>
+      </div>
+      <div class="col">
+        <span>{{(fatura.totalFatura - fatura.valorPago)|currency: 'AOA'}}</span>
+      </div>
+    </div>
+    <div class="row margem">
+        <div class="col d-flex justify-content-end">
+          <span>Valor a pagar:</span>
+        </div>
+        <div class="col">
+          <input [(ngModel)]="pagamento.valorpago" name="valor" type="text" class="form-control" placeholder="Valor a pagar">
+        </div>
+      </div>
+
+      <div class="row margem">
+        <div class="col d-flex justify-content-end">
+          <span>Carregar comprovativo:</span>
+        </div>
+        <div class="col">
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+      </div>
+
+</form>
+<div class="margem d-flex justify-content-end"><button (click)="onPagamento()" type="button" class="btn btn-primary">Efetuar Pagamento</button>
+  <button type="button" class="btn btn-primary" style="margin-left: 4px">Cancelar</button>
+</div>
+</div>
+</div>
+</div>
+{{fatura|json}}
 
 
 

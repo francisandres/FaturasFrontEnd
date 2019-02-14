@@ -1,0 +1,19 @@
+<mat-toolbar > <div class="center">
+<button mat-button [matMenuTriggerFor]="orcprev">Despesas</button>
+  <mat-menu #orcprev="matMenu">
+     <button mat-menu-item>Registar</button>
+    <button mat-menu-item [routerLink]="['clientes']">Confirmar</button>
+    <button mat-menu-item>Listar</button>
+
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="produ" >Custos</button>
+  <mat-menu #produ="matMenu">
+    <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
+   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+  </mat-menu>
+
+
+
+ <button mat-button> Pagamentos pendentes</button></div></mat-toolbar>
+<router-outlet></router-outlet>

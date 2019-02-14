@@ -25,7 +25,7 @@ export class CriarclienteComponent implements OnInit {
 
   salvar() {
         this.clienteservico.adicionarCliente(this.cliente).subscribe(
-      (data: Clientes) => {this.router.navigateByUrl('/painel');
+      (data: Clientes) => {this.router.navigate(['vendas/detalhescliente', data.clienteId]);
 
     }, (err: any) => console.log(err)
     );

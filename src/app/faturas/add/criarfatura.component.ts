@@ -25,6 +25,8 @@ export class CriarfaturaComponent implements OnInit {
     faturaid: null,
     clienteId: null,
     nome: null,
+    // tslint:disable-next-line:quotemark
+    estadodafatura: "Por emitir",
     totalfatura: 0,
     linha: this.fb.array( [this.contruirLinha()]),
 
@@ -57,7 +59,7 @@ export class CriarfaturaComponent implements OnInit {
     console.log('Submit', p as Faturas);
 
     this.faturaservico.definirFaturaTemp(p);
-    this.router.navigate(['/faturadetalhe']);
+    this.router.navigate(['/vendas/faturadetalhe']);
 
   }
 

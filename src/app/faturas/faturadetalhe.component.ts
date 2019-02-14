@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./faturadetalhe.component.css']
 })
 export class FaturadetalheComponent implements OnInit {
+  botoes: boolean;
    fatura: Faturas;
    x: Linha[];
    dataatual = new Date();
@@ -29,7 +30,9 @@ export class FaturadetalheComponent implements OnInit {
   onValidar() {
     console.log(this.fatura);
     this.serv.adicionarFatura(this.fatura).subscribe(
-      (data: Faturas) => {this.router.navigateByUrl('/vendas/produtos');
+      (data: Faturas) => {
+        console.log(data);
+        this.router.navigate(['/vendas/detalhesfatura', data.faturaId]);
 
     }, (err: any) => console.log(err)
     );

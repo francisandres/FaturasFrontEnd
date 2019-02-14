@@ -35,7 +35,7 @@
   </ng-container>
   <ng-container matColumnDef="detalhes">
     <th mat-header-cell *matHeaderCellDef> Detalhes </th>
-    <td mat-cell *matCellDef="let element"><a routerLink="/detalhescliente/{{element.clienteId}}" routerLinkActive="active"><button mat-button matTooltip="Detalhes sobre Cliente"> <mat-icon class="mat-18" >details</mat-icon></button></a></td>
+    <td mat-cell *matCellDef="let element"><a routerLink="/vendas/detalhescliente/{{element.clienteId}}" routerLinkActive="active"><button mat-button matTooltip="Detalhes sobre Cliente"> <mat-icon class="mat-18" >details</mat-icon></button></a></td>
   </ng-container>
 
   <ng-container matColumnDef="apagar">

@@ -21,7 +21,8 @@ export class CriarprodutoComponent implements OnInit {
   salvar() {
 
     this.proser.adicionarProduto(this.produto).subscribe(
-      (data: Produtos) => {this.router.navigateByUrl('/produtos');
+      (data: Produtos) => {this.router.navigate(['/vendas/produtos']);
+
 
     }, (err: any) => console.log(err)
     );
@@ -30,7 +31,7 @@ export class CriarprodutoComponent implements OnInit {
   }
 
   cancelar() {
-    this.router.navigateByUrl('/produtos');
+    this.router.navigate(['/vendas/produtos']);
 
 
   }

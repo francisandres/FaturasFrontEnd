@@ -1,2 +1,26 @@
-<mat-toolbar > <div class="center">  <button mat-button [routerLink]="['clientes']">Clientes</button><button mat-button [routerLink]="['produtos']">Produtos</button><button mat-button [routerLink]="['faturas']">Faturas</button><button mat-button [routerLink]="['faturas']">Recebimentos</button></div></mat-toolbar>
+<mat-toolbar > <div class="center"> <button mat-button [matMenuTriggerFor]="clie">Clientes</button>
+  <mat-menu #clie="matMenu">
+     <button mat-menu-item>Adicionar Novo</button>
+    <button mat-menu-item [routerLink]="['clientes']">Listagem</button>
+    <button mat-menu-item>Devedores</button>
+
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="produ" >Produtos</button>
+  <mat-menu #produ="matMenu">
+    <button mat-menu-item [routerLink]="['criarproduto']">Criar Produto</button>
+   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+
+
+ </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="fatu">Faturas</button>
+  <mat-menu #fatu="matMenu">
+    <button mat-menu-item [routerLink]="['criarfatura']">Criar Fatura</button>
+   <button mat-menu-item [routerLink]="['faturas']">Listar</button>
+   <button mat-menu-item>Cotação</button>
+
+ </mat-menu>
+
+ <button mat-button [routerLink]="['faturas']">Recebimentos</button></div></mat-toolbar>
 <router-outlet></router-outlet>
