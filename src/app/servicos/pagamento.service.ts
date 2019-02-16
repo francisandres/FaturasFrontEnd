@@ -15,7 +15,13 @@ const httpOptions = {
 export class PagamentoService {
   constructor(private http: HttpClient) { }
 
-  private Url = 'http://localhost:64634/api/pagamentos';
+  private Url = 'http://localhost:64634/api/pagamento';
+
+  obterPagamentos(): Observable<Pagamentos[]> {
+
+    return this.http.get<Pagamentos[]>(this.Url);
+  }
+
   adicionarPagamento(pagamento: Pagamentos): Observable<Pagamentos> {
 
     return this.http.post<Pagamentos>(this.Url, pagamento, httpOptions);

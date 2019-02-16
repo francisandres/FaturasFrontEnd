@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class TransacoesService {
 
   constructor(private http: HttpClient) { }
-  private Url = 'http://localhost:64634/api/Transacoes';
+  private Url = 'http://localhost:64634/api/transacao';
 
 
   obterClienteporid(id: string): Observable<Transacoes[]> {

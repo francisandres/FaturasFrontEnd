@@ -1,1 +1,16 @@
 <mat-toolbar > <div class="center">  <button mat-button [routerLink]="['listar']">Caixa</button><button mat-button [routerLink]="['criar']">Bancos</button><button mat-button>Financiamentos</button><button mat-button>Dívidas</button></div></mat-toolbar>
+
+<div class="row container"><div *ngFor="let banco of bancos" class="col-xl-4 col-sm-6 py-2 ">
+      <a [routerLink]="['/vendas/faturas']" style="text-decoration: none"><div class="card  h-100 mb-3 shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+              <div class="rotate">
+              Banco: {{banco.nomeDoBanco}}
+
+              </div>
+              <span class="text-uppercase">Saldo: {{banco.saldo | currency: 'AOA'}}</span>
+
+          </div>
+
+
+      </div></a>
+  </div></div>

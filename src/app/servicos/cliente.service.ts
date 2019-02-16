@@ -18,7 +18,7 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
-  private Url = 'http://localhost:64634/api/Clientes';
+  private Url = 'http://localhost:64634/api/cliente';
 
 
 

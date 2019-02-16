@@ -42,6 +42,8 @@ import { ReceitasComponent } from './graficos/donut/receitas.component';
 import { ListarFaturasComponent } from './faturas/listagem/listar-faturas.component';
 import { FaturaComponent } from './faturas/detalhes/fatura.component';
 import { GastosMenuComponent } from './gastos/gastos-menu.component';
+import { OrcamentoMenuComponent } from './orcamento/orcamento-menu.component';
+import { ConfigNavComponent } from './configuracoes/config-nav.component';
 
 
 
@@ -71,6 +73,8 @@ import { GastosMenuComponent } from './gastos/gastos-menu.component';
     ListarFaturasComponent,
     FaturaComponent,
     GastosMenuComponent,
+    OrcamentoMenuComponent,
+    ConfigNavComponent,
 
 
   ],

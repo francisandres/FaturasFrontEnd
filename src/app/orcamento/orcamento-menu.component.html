@@ -1,0 +1,24 @@
+<mat-toolbar > <div class="center">
+<button mat-button [matMenuTriggerFor]="orcprev">Orçamento Previsional</button>
+  <mat-menu #orcprev="matMenu">
+     <button mat-menu-item>Criar</button>
+
+    <button mat-menu-item>Listar</button>
+
+  </mat-menu>
+
+  <button mat-button  >Comparação</button>
+  <mat-menu #produ="matMenu">
+    <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
+   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+  </mat-menu>
+
+
+
+ <button mat-button [matMenuTriggerFor]="orcproj"> Orçamento de Projectos</button>
+   <mat-menu #orcproj="matMenu">
+    <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
+   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+  </mat-menu>
+ </div></mat-toolbar>
+<router-outlet></router-outlet>

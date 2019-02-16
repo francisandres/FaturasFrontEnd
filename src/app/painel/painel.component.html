@@ -1,6 +1,6 @@
-<div class="container"><div class="row mb-3">
-  <div class="col-xl-2 col-sm-6 py-2">
-      <div class="card bg-success text-white h-100">
+<div class="container "><div class="row mb-3 shadow p-3 mb-5 bg-white rounded">
+  <div class="col-xl-2 col-sm-6 py-2 ">
+      <a [routerLink]="['/vendas/faturas']" style="text-decoration: none"><div class="card bg-success text-white h-100">
           <div class="card-body bg-success">
               <div class="rotate">
                 <i class="fa fa-money fa-2x"></i>
@@ -8,8 +8,12 @@
               <h5 class="text-uppercase">Faturação</h5>
               <h6 >{{total|currency: 'AOA'}}</h6>
           </div>
-      </div>
+
+
+      </div></a>
   </div>
+
+
   <div class="col-xl-2 col-sm-6 py-2">
       <div class="card text-white bg-danger h-100">
           <div class="card-body bg-danger">
@@ -17,7 +21,7 @@
                   <i class="fa fa-file fa-2x"></i>
               </div>
               <h5 class="text-uppercase">Vendas</h5>
-              <h6 >{{vendas}} vendas efectuadas</h6>
+              <h6 >{{vendas}} </h6>
           </div>
       </div>
   </div>
@@ -28,7 +32,7 @@
                   <i class="fa fa-users fa-2x"></i>
               </div>
               <h5 class="text-uppercase">Clientes</h5>
-              <h6 >{{qtdclientes}} clientes registados</h6>
+              <h6 >{{qtdclientes}} </h6>
           </div>
       </div>
   </div>
@@ -39,7 +43,7 @@
                   <i class="fa fa-angle-double-left  fa-2x"></i>
               </div>
               <h5 class="text-uppercase">P/ receber</h5>
-              <h6 >545.950,00 AKZ Por receber</h6>
+              <h6 >545.950,00 AKZ </h6>
           </div>
       </div>
   </div>
@@ -66,6 +70,7 @@
   </div>
 </div>
 </div>
+
 <app-barras></app-barras>
 <div class="row">
 <app-despesas class="col-xl-6 col-sm-6 py-2"></app-despesas>

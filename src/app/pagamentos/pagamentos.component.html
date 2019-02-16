@@ -34,10 +34,12 @@
       <span>Banco de destino:</span>
     </div>
     <div class="col">
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Caixa</option>
-        <option>BFA</option>
-        <option>BIC</option>
+      <select class="form-control" [(ngModel)]="pagamento.bancoid" name="sel2">
+
+        <option>---Escolha o Banco---</option>
+        <option *ngFor="let banco of bancos" [value]="banco.bancoId">{{banco.nomeDoBanco}}</option>
+
+
 
       </select>
     </div>
@@ -98,7 +100,7 @@
 </div>
 </div>
 </div>
-{{fatura|json}}
+{{bancoesc|json}}
 
 
 

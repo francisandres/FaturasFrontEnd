@@ -5,4 +5,5 @@ export class Pagamentos {
   faturaid: string;
   clienteid: string;
   transacaoid: string;
+  bancoid: string;
 }

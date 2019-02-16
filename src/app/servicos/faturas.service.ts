@@ -20,7 +20,7 @@ export class FaturasService {
 
 
   constructor(private http: HttpClient) { }
-  private Url = 'http://localhost:64634/api/Faturas';
+  private Url = 'http://localhost:64634/api/fatura';
 
   obterFaturas(): Observable<Faturas[]> {
 

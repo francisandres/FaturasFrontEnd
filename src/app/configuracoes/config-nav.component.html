@@ -1,0 +1,54 @@
+<div class="container " style="padding-top:15px">
+<div class="shadow p-3 mb-5 bg-white rounded formulario ">
+  <div>
+    <h3>Criar banco</h3>
+  </div>
+  <div class="card-body">
+
+    <form [formGroup]="bancoform" novalidate (ngSubmit)="onSubmit()">
+  <div class="row margem">
+    <div class="col-md-1"></div><div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Nome do Banco" formControlName="nomedobanco">
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Nome do Gestor" formControlName="nomedogestor">
+    </div>
+  </div>
+  <div class="row margem">
+    <div class="col-md-1"></div><div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Tel do Gestor" formControlName="contactodogestor">
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Email do Gestor" formControlName="emaildogestor">
+    </div>
+  </div>
+
+   <div class="dropdown-divider"></div>
+
+    <div formArrayName="contabancaria" *ngFor="let conta of contabancaria.controls; let i=index">
+    <div class="row margem" [formGroupName]="i">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+    <input type="text" class="form-control" placeholder="Número de conta" formControlName="numerodeconta">
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Tipo de conta" formControlName="tipodeconta">
+    </div>
+    </div>
+
+    </div>
+     <button type="button" class="btn btn-outline-primary" (click)="addConta()">Adicionar Conta</button>
+    <button type="submit" class="btn btn-outline-primary" >Salvar</button>
+
+
+
+
+
+
+
+
+</form>
+
+</div>
+</div>
+</div>
