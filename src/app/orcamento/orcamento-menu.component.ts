@@ -10,6 +10,7 @@ export class OrcamentoMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   
   }
 
 }

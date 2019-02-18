@@ -44,6 +44,8 @@ import { FaturaComponent } from './faturas/detalhes/fatura.component';
 import { GastosMenuComponent } from './gastos/gastos-menu.component';
 import { OrcamentoMenuComponent } from './orcamento/orcamento-menu.component';
 import { ConfigNavComponent } from './configuracoes/config-nav.component';
+import { ReceitaOrcamentoComponent } from './orcamento/receita/receita-orcamento.component';
+import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.component';
 
 
 
@@ -75,6 +77,8 @@ import { ConfigNavComponent } from './configuracoes/config-nav.component';
     GastosMenuComponent,
     OrcamentoMenuComponent,
     ConfigNavComponent,
+    ReceitaOrcamentoComponent,
+    CustoOrcamentoComponent,
 
 
   ],

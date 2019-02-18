@@ -1,24 +1,31 @@
-<mat-toolbar > <div class="center">
-<button mat-button [matMenuTriggerFor]="orcprev">Orçamento Previsional</button>
-  <mat-menu #orcprev="matMenu">
-     <button mat-menu-item>Criar</button>
+<mat-toolbar>
+  <div class="center">
+    <button mat-button [matMenuTriggerFor]="orcprev">
+      Orçamento Previsional
+    </button>
+    <mat-menu #orcprev="matMenu">
+      <button mat-menu-item [routerLink]="['criarreceita']">Projectar Receita</button>
 
-    <button mat-menu-item>Listar</button>
+      <button mat-menu-item [routerLink]="['criarcusto']">Projectar Custos</button>
+      <button mat-menu-item>Projectar Despesas</button>
+      <button mat-menu-item>Listar Projeções</button>
 
-  </mat-menu>
+    </mat-menu>
 
-  <button mat-button  >Comparação</button>
-  <mat-menu #produ="matMenu">
-    <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
-   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
-  </mat-menu>
+    <button mat-button>Comparação</button>
+    <mat-menu #produ="matMenu">
+      <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
+      <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+    </mat-menu>
 
-
-
- <button mat-button [matMenuTriggerFor]="orcproj"> Orçamento de Projectos</button>
-   <mat-menu #orcproj="matMenu">
-    <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
-   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
-  </mat-menu>
- </div></mat-toolbar>
+    <button mat-button [matMenuTriggerFor]="orcproj">
+      Orçamento de Projectos
+    </button>
+    <mat-menu #orcproj="matMenu">
+      <button mat-menu-item [routerLink]="['criarproduto']">Registar</button>
+      <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+    </mat-menu>
+  </div></mat-toolbar
+>
 <router-outlet></router-outlet>
+

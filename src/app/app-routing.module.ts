@@ -22,6 +22,8 @@ import { FaturaComponent } from './faturas/detalhes/fatura.component';
 import { GastosMenuComponent } from './gastos/gastos-menu.component';
 import { OrcamentoMenuComponent } from './orcamento/orcamento-menu.component';
 import { ConfigNavComponent } from './configuracoes/config-nav.component';
+import { ReceitaOrcamentoComponent } from './orcamento/receita/receita-orcamento.component';
+import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.component';
 
 
 const routes: Routes = [{
@@ -59,8 +61,13 @@ const routes: Routes = [{
   component: GastosMenuComponent
 },
 {
-  path: 'orcamentos',
-  component: OrcamentoMenuComponent
+  path: 'orcamentos', component: OrcamentoMenuComponent, children: [
+
+    {path: '', redirectTo: 'criarreceita', pathMatch: 'full'},
+    {path: 'criarreceita', component: ReceitaOrcamentoComponent},
+    {path: 'criarcusto', component: CustoOrcamentoComponent}
+
+]
 },
 {
   path: 'configuracoes',

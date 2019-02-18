@@ -1,0 +1,84 @@
+
+<div class="container card orcamento mb-3 shadow p-3 mb-5 bg-white rounded">
+
+    <form>
+      <div class="row">
+        <div class="col form-group">
+
+              <label for="exampleInputEmail1">Nome da Receita</label>
+
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default" [(ngModel)]="receit.nomeDaReceita" name="receita"
+          />
+        </div>
+
+        <div class="col form-group" >
+            <label for="exampleInputEmail1">Tipo de receita</label>
+            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="artigo"name="nome">
+                <option [value]="venda">Venda de produtos</option>
+                <option [value]="servico">Serviços por hora</option>
+                <option [value]="plano">Planos mensais</option>
+                <option [value]="receita">Receita extraordinária</option>
+              </select>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col form-group">
+
+              <label for="exampleInputEmail1">{{artigo}} </label>
+
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"[(ngModel)]="receit.nomeDoArtigo" name="artigo"
+          />
+        </div>
+
+        <div class="col form-group">
+
+            <label for="exampleInputEmail1">Preço unitário</label>
+
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default" [(ngModel)]="receit.preco" name="preco"
+        />
+      </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+
+                <label for="exampleInputEmail1">Quantidade</label>
+
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-default" [(ngModel)]="receit.quantidade" name="quantidade"
+            />
+          </div>
+
+          <div class="col form-group">
+
+              <label for="exampleInputEmail1">Descrição da receita</label>
+
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default" name="descricao"
+          />
+        </div>
+         </div>
+      
+         <div class="row">
+            <div class="col"><button type="button" class="btn btn-success" (click)="onSalvar()">Salvar</button> <button type="button" class="btn btn-danger" style="margin-left: 5px">Cancelar</button></div>
+            <div class="col"></div>
+         </div>
+    </form>
+  </div>

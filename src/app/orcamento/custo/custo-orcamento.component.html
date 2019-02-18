@@ -1,0 +1,42 @@
+<form><div class="container col mb-3 shadow p-3 mb-5 bg-white rounded" style="width: 45%">
+  <div><label for="exampleInputEmail1">Nome do Custo</label>
+
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default"[(ngModel)]="custo.nomeDoCusto"  name="receita"
+    /></div>
+    <br><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <label class="form-check-label" for="inlineRadio1">Custo Associado a uma Receita</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <label class="form-check-label" for="inlineRadio2">Custo Generico</label>
+    </div>
+    <br><br>
+    <span><strong>Identifique a receita associada ao custo</strong></span>
+    <div class="form-group ">
+      <label for="inputState">Receita</label>
+      <select id="inputState" class="form-control">
+        <option selected>Escolha...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div><label for="exampleInputEmail1">Valor do Custo</label>
+
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Default"
+        aria-describedby="inputGroup-sizing-default" [(ngModel)]="custo.valorDoCusto"  name="Valor"
+      /></div>
+      <br>
+      <div class="row">
+        <div class="col"><button type="button" class="btn btn-success" (click)="onSalvar()">Salvar</button> <button type="button" class="btn btn-danger" style="margin-left: 5px">Cancelar</button></div>
+        <div class="col"></div>
+     </div>
+
+</div></form>
