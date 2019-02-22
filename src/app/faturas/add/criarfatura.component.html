@@ -17,6 +17,8 @@
           </mat-form-field>
         </div>
       </div>
+
+
       <div formArrayName="linha" *ngFor="let lin of linha.controls; let i=index">
 
       <div class="row" [formGroupName]="i">
@@ -80,7 +82,7 @@
 
     </mat-card-content>
    <div class="container">
-      <strong> TOTAL:<input matInput  type="text" formControlName="_lastUsed" readonly style="padding: 11px 0px 11px 0px; font-size: 19px;" formControlName="totalfatura">
+      <strong> TOTAL:<input matInput  type="text"  readonly style="padding: 11px 0px 11px 0px; font-size: 19px;" formControlName="totalfatura">
       </strong>
 
     <div class="col-md-4">

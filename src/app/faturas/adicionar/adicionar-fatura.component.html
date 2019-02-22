@@ -1,0 +1,107 @@
+
+
+<!-- Page content -->
+<div class="container">
+  <mat-card>
+    <!-- Page form start -->
+    <form [formGroup]="orcamentoForm"  novalidate (ngSubmit)="onSubmit()" >
+    <mat-card-title>Criar Fatura</mat-card-title>
+    <mat-card-content>
+
+
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="3.5%" fxLayoutAlign="left">
+          <mat-form-field>
+            <mat-select placeholder="Seleccione o Cliente" (selectionChange)= "onChangeNome($event)" formControlName="clienteId" >
+              <mat-option *ngFor="let cliente of clientes" [value]="cliente.clienteId">
+                {{cliente.primeiro_nome}} {{cliente.ultimo_nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+
+    
+
+
+      <br>
+
+      <!-- Start form units array with first row must and dynamically add more -->
+      <mat-card >
+        <mat-card-title>Itens</mat-card-title>
+        <mat-divider></mat-divider>
+
+        <!-- loop throught units -->
+        <div formArrayName="linha" *ngFor="let lin of linha.controls; let i=index">
+
+          <!-- row divider show for every nex row exclude if first row -->
+          <mat-divider ></mat-divider><br>
+
+          <!-- group name in this case row index -->
+          <div  [formGroupName]="i" >
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="3.5%" fxLayoutAlign="center">
+
+              <!-- unit name input field -->
+              <mat-form-field  fxFlex="30%">
+                <mat-select placeholder="Seleccione o Produto" (selectionChange) = "onChangeProduct($event, i)" formControlName="produtoId">
+                  <mat-option *ngFor="let produto of produtos" [value]="produto.produtoId">
+                    {{produto.nome}}
+                  </mat-option>
+                </mat-select>
+                <!-- input field error -->
+                <mat-error >
+                    Unit name is required.
+                </mat-error>
+              </mat-form-field>
+
+
+              <!-- unit quantity input field -->
+
+              <mat-form-field #{{i}}  fxFlex="10%" fxFlex.xs="20">
+                <input matInput placeholder="Quantidade" type="number" (change)="onChangQtdade($event, i)" formControlName="quantidade"  required>
+              </mat-form-field>
+
+
+              <!-- unit price input field -->
+              <mat-form-field  fxFlex="20%"  fxFlex.xs="grow">
+                <input matInput placeholder="Preço Unitário" type="number" formControlName="precoVenda"  required>
+              </mat-form-field>
+
+              <!-- unit total price input field, calculated and not editable -->
+              <div fxLayout.xs="row">
+              <mat-form-field  >
+                <input matInput placeholder="Total" formControlName="totalLinha"  readonly>
+              </mat-form-field>
+
+              <!-- row delete button, hidden if there is just one row -->
+              <button type="button" mat-mini-fab color="warn" fxFlex="nogrow"
+                      >
+                  <mat-icon>delete forever</mat-icon>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New unit button -->
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+          <button type="button" (click)="addLinha()" mat-raised-button >
+            <mat-icon>add box</mat-icon>
+            Adicionar produto/serviço
+          </button>
+        </mat-card-actions>
+      </mat-card> <!-- End form units array -->
+      <br>
+      <!-- Total price calculation formated with angular currency pipe -->
+      <mat-card>
+        O preço total é {{orcamentoForm.get('totalFatura').get}}
+      </mat-card>
+    </mat-card-content>
+
+    <!-- Form submit button enabled on if form is valid -->
+    <mat-card-actions><button mat-button >Salvar</button></mat-card-actions>
+    </form> <!-- Page form end -->
+  </mat-card>
+
+</div>

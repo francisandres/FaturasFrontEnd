@@ -92,6 +92,7 @@ onChangeProduct($event, i) {
 
   });
 
+
   this.setAllTotal();
 }
 

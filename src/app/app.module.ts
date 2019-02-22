@@ -46,6 +46,8 @@ import { OrcamentoMenuComponent } from './orcamento/orcamento-menu.component';
 import { ConfigNavComponent } from './configuracoes/config-nav.component';
 import { ReceitaOrcamentoComponent } from './orcamento/receita/receita-orcamento.component';
 import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.component';
+import { AdicionarFaturaComponent } from './faturas/adicionar/adicionar-fatura.component';
+import { CurrencyPipe } from '@angular/common';
 
 
 
@@ -79,6 +81,7 @@ import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.compo
     ConfigNavComponent,
     ReceitaOrcamentoComponent,
     CustoOrcamentoComponent,
+    AdicionarFaturaComponent,
 
 
   ],
@@ -113,7 +116,7 @@ import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.compo
 
 
   ],
-  providers: [ClienteService, ClienteResolverService, ProdutosService],
+  providers: [ClienteService, ClienteResolverService, ProdutosService, CurrencyPipe],
   bootstrap: [NavegacaoComponent]
 })
 export class AppModule { }

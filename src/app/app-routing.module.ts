@@ -24,6 +24,7 @@ import { OrcamentoMenuComponent } from './orcamento/orcamento-menu.component';
 import { ConfigNavComponent } from './configuracoes/config-nav.component';
 import { ReceitaOrcamentoComponent } from './orcamento/receita/receita-orcamento.component';
 import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.component';
+import { AdicionarFaturaComponent } from './faturas/adicionar/adicionar-fatura.component';
 
 
 const routes: Routes = [{
@@ -45,11 +46,11 @@ const routes: Routes = [{
     {path: 'produtos', component: ProdutoslistaComponent},
     {path: 'criarproduto', component: CriarprodutoComponent},
 
-    {path: 'criarfatura', component: CriarfaturaComponent },
+    {path: 'criarfatura', component: AdicionarFaturaComponent },
     {path: 'faturadetalhe', component: FaturadetalheComponent},
     {path: 'detalhesfatura/:id', component: FaturaComponent},
     {path: 'faturas', component: ListarFaturasComponent},
-    {path: 'receberpagamento', component: PagamentosComponent }
+    {path: 'receberpagamento', component: PagamentosComponent },
   ]
 },
 {

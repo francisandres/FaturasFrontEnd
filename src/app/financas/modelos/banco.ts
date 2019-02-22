@@ -1,11 +1,11 @@
 export class Banco {
-  bancoid: string;
-  nomedobanco: string;
-  nomedogestor: string;
-  contactodogestor: string;
-  emaildogestor: string;
+  bancoId: string;
+  nomeDoBanco: string;
+  nomeDoGestor: string;
+  contactoDoGestor: string;
+  emailDoGestor: string;
   saldo: number;
-  contabancaria: Contabancaria[];
+  contaBancaria: Contabancaria[];
 
 }
 

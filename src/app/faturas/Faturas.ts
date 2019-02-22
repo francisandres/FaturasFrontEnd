@@ -5,22 +5,22 @@ export class Faturas {
   faturaId: string;
   clienteId: string;
   nome: string;
-  totalfatura: number;
-  valoremdivida: number;
+  totalFatura: number;
+  valorPago: number;
   numerodefatura: number;
-  estadodafatura: string;
+  estadoDaFatura: string;
   linha: Linha[];
 }
 
 export class Linha {
-  produtoid: string;
+  produtoId: string;
   descricao: string;
   nome: string;
   quantidade: number;
-  precovenda: number;
+  precoVenda: number;
   desconto: number;
   imposto: null;
-  totallinha: number;
+  totalLinha: number;
 
 }
 

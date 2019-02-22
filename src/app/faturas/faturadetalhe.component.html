@@ -3,7 +3,7 @@
 <div class="card-header">
 Data
 <strong>{{dataatual | date:'dd-MM-yyyy'}}</strong>
-  <span class="float-right"> <strong>Estado:</strong> {{fatura.estadodafatura}}</span>
+  <span class="float-right"> <strong>Estado:</strong> {{fatura.estadoDaFatura}}</span>
 
 </div>
 <div class="card-body">
@@ -51,13 +51,13 @@ Data
 </thead>
 <tbody>
 <tr *ngFor=" let item of fatura.linha">
-<td class="center">{{item.produtoid}}</td>
+<td class="center">{{item.produtoId}}</td>
 <td class="left strong">{{item.nome}}</td>
 <td class="left">{{item.descricao}}</td>
 
-<td class="right">{{item.precovenda | currency: 'AOA'}}</td>
+<td class="right">{{item.precoVenda | currency: 'AOA'}}</td>
   <td class="center">{{item.quantidade}}</td>
-<td class="right">{{item.totallinha |currency: 'AOA'}}</td>
+<td class="right">{{item.totalLinha |currency: 'AOA'}}</td>
 </tr>
 
 </tbody>
@@ -75,7 +75,7 @@ Data
 <td class="left">
 <strong>Subtotal</strong>
 </td>
-<td class="right">{{fatura.totalfatura - ((fatura.totalfatura/114)*14)| currency: 'AOA' }}</td>
+<td class="right">{{fatura.totalFatura - ((fatura.totalFatura/114)*14)| currency: 'AOA' }}</td>
 </tr>
 <tr>
 <td class="left">
@@ -87,14 +87,14 @@ Data
 <td class="left">
  <strong>IVA (14%)</strong>
 </td>
-<td class="right">{{((fatura.totalfatura/114)*14)| currency: 'AOA'}}</td>
+<td class="right">{{((fatura.totalFatura/114)*14)| currency: 'AOA'}}</td>
 </tr>
 <tr>
 <td class="left">
 <strong>Total</strong>
 </td>
 <td class="right">
-<strong>{{fatura.totalfatura | currency: 'AOA'}}</strong>
+<strong>{{fatura.totalFatura | currency: 'AOA'}}</strong>
 </td>
 </tr>
 </tbody>
