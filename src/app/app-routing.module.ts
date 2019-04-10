@@ -25,6 +25,8 @@ import { ConfigNavComponent } from './configuracoes/config-nav.component';
 import { ReceitaOrcamentoComponent } from './orcamento/receita/receita-orcamento.component';
 import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.component';
 import { AdicionarFaturaComponent } from './faturas/adicionar/adicionar-fatura.component';
+import { FuncionariosComponent } from './funcionarios/funcionarios.component';
+import { AddFuncionarioComponent } from './funcionarios/funcionarios/add-funcionario.component';
 
 
 const routes: Routes = [{
@@ -73,7 +75,16 @@ const routes: Routes = [{
 {
   path: 'configuracoes',
   component: ConfigNavComponent
+},
+{
+  path: 'funcionarios', component: FuncionariosComponent, children: [
+
+    {path: '', redirectTo: 'addfuncionario', pathMatch: 'full'},
+    {path: 'addfuncionario', component: AddFuncionarioComponent}
+
+  ]
 }
+
 
 
 

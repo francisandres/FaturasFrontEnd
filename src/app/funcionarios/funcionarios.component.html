@@ -1,0 +1,23 @@
+<mat-toolbar > <div class="center"> <button mat-button [routerLink]="['/listarfuncionarios']">Funcionarios</button>
+
+
+  <button mat-button [matMenuTriggerFor]="produ" >Assiduidade</button>
+  <mat-menu #produ="matMenu">
+    <button mat-menu-item [routerLink]="['criarproduto']">Criar Produto</button>
+   <button mat-menu-item [routerLink]="['produtos']">Listar</button>
+
+
+ </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="fatu">Vencimentos</button>
+  <mat-menu #fatu="matMenu">
+    <button mat-menu-item [routerLink]="['criarfatura']">Criar Fatura</button>
+   <button mat-menu-item [routerLink]="['faturas']">Listar</button>
+   <button mat-menu-item>Cotação</button>
+
+ </mat-menu>
+
+ <button mat-button [routerLink]="['faturas']">Dispensas</button>
+ <button mat-button [routerLink]="['teste']">Avaliação de desempenho</button></div>
+</mat-toolbar>
+<router-outlet></router-outlet>

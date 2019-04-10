@@ -48,6 +48,8 @@ import { ReceitaOrcamentoComponent } from './orcamento/receita/receita-orcamento
 import { CustoOrcamentoComponent } from './orcamento/custo/custo-orcamento.component';
 import { AdicionarFaturaComponent } from './faturas/adicionar/adicionar-fatura.component';
 import { CurrencyPipe } from '@angular/common';
+import { FuncionariosComponent } from './funcionarios/funcionarios.component';
+import { AddFuncionarioComponent } from './funcionarios/funcionarios/add-funcionario.component';
 
 
 
@@ -82,6 +84,8 @@ import { CurrencyPipe } from '@angular/common';
     ReceitaOrcamentoComponent,
     CustoOrcamentoComponent,
     AdicionarFaturaComponent,
+    FuncionariosComponent,
+    AddFuncionarioComponent,
 
 
   ],
